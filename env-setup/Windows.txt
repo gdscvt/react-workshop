@@ -1,0 +1,10 @@
+Installing node, and npm in Windows using nvm:
+
+1. Install nvm using https://github.com/coreybutler/nvm-windows/releases (nvm-setup.exe)
+	=> Helpful when it comes to switching between different versions of node easily
+2. By default, nvm will be installed in C:\Users\<USER>\AppData\Roaming\nvm
+3. If installed properly, the command `nvm list available` will show the list of all available node versions for the nvm
+4. Use `nvm install <VERSION>` to install the desired node version
+5. The installed version will be located in C:\Users\<USER>\AppData\Roaming\nvm\v<VERSION>
+6. Open powershell in admin mode, and run command `nvm use <VERSION>` to switch to the desired installed node version
+7. If done properly, the commands `node -v`, and `npm -v` or `npx -v` will print the node, and npm/npx versions respectively
