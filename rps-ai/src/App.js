@@ -24,21 +24,21 @@ function App() {
   }
 
   function choose(input, difficulty) {
-    const rand = Math.random() * 100;
-    if (rand >= difficulty) {
-      return (input + 2) % 3;
-    } else if (rand >= (100 - difficulty) / 2.0) {
+    const rand = Math.random();
+    if (rand < (difficulty / 50.0) * (1.0 / 3.0)) {
       return (input + 1) % 3;
-    } else {
+    } else if (rand < (difficulty / 50.0) * (2.0 / 3.0)) {
       return input;
+    } else {
+      return (input + 2) % 3;
     }
   }
 
   function checkWin(me, ai) {
-    if (me == (ai + 1) % 3) {
+    if (me === (ai + 1) % 3) {
       setWinCount(winCount + 1);
       return `The opponent chose ${choiceToString(ai)}, you win!`;
-    } else if (me == (ai + 2) % 3) {
+    } else if (me === (ai + 2) % 3) {
       setLossCount(lossCount + 1);
       return `The opponent chose ${choiceToString(ai)}, you lose!`;
     } else {
